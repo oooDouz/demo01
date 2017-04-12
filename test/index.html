@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title >demo</title>
+   	<style type="text/css">
+	   	body,html{
+	   		width: 100%;
+	   		height: 100%;
+	   		margin: 0;
+	   		padding: 0;
+	   	}
+   		.wrap{
+   			width: 100%;
+	   		height: 100%;
+   		}
+   		.file{
+   			width: 100px;
+   			height: 100px;
+   			margin: 20px;
+   			background: url('file.png');
+   			background-size: 100%;
+   			float: left;
+   		}
+   	</style>
+</head>
+<body>cccccccccccccccccccc
+	<div id="wrap" class="wrap">
+		<!-- <div class="file"></div>
+		<div class="file"></div>
+		<div class="file"></div>
+		<div class="file"></div>
+		<div class="file"></div>
+		<div class="file"></div>
+		<div class="file"></div>
+		<div class="file"></div>
+		<div class="file"></div> -->
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript">
+	var fileInfo = [
+		{
+			'fileName':'a.js',
+			'size':'5KB',
+			'data':'2017-02-14',
+			'imgUrl':''
+		},
+		{
+			'fileName':'b.json',
+			'size':'5KB',
+		},
+		{
+			'fileName':'g.txt',
+			'size':'5KB',
+		},
+		{
+			'fileName':'k.ppt',
+			'size':'5KB',
+		},
+		{
+			'fileName':'h.css',
+			'size':'5KB',
+		},
+		{
+			'fileName':'l.js',
+			'size':'5KB',
+		},
+		{
+			'fileName':'o.js',
+			'size':'5KB',
+		},
+	];
+	for(var i=0;i<fileInfo.length;i++){
+		$('#wrap').append('<div class="file" data-name="'+fileInfo[i].fileName+'" size="'+fileInfo[i].size+'"></div>');
+	}
+	var files = $('#wrap>div');
+	for(var j=0;j<files.length;j++){
+		$(files[j]).on('mousedown',function(){
+			alert($(this).attr('size'));
+			$.ajax({		
+				type: "GET",				
+				cache: false,				
+				url: "",				
+				data: "",			
+				success: function(){
+				},				
+				error:function(){
+					
+				}			
+			});
+		})
+	}
+</script>
+<script type="text/javascript">
+
+</script>
+
+
+</body>
+</html>
